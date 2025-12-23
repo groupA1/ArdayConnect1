@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArdayConnect - Portal</title>
+    <link rel="stylesheet" href="stylka.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <div class="logo-wrapper" onclick="showPage('home')">
+        <img src="loogo.jpg" alt="Logo" class="logo-img"> 
+        <div class="logo">Arday<span>Connect</span></div>
+    </div>
+    <button class="nav-btn-calc" onclick="showPage('calc')">Calculator</button>
+</nav>
+
+<div id="home" class="page active">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Welcome to Arday Connect</h1>
+            <p>Your ultimate academic partner to calculate GPA, track grades, and monitor progress.</p>
+            <button class="btn-main" onclick="showPage('calc')">Get Started</button>
+        </div>
+        <div class="hero-visual"></div>
+    </div>
+</div>
+
+<div id="calc" class="page">
+    <div class="calc-container">
+        <div class="glass-card">
+            <h2 style="margin-bottom:25px; color: var(--text-dark);">GPA Calculator</h2>
+            
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <label>Subject(Maadada)</label>
+                    <input type="text" id="subName" placeholder="Tusaale: English">
+                </div>
+                <div class="input-group">
+                    <label>Max Marks(Lagu Saxaayo)</label>
+                    <input type="number" id="maxMarks" value="100">
+                </div>
+                <div class="input-group">
+                    <label>Obtained(Intaa keentay)</label>
+                    <input type="number" id="obtMarks" placeholder="Tusaale: 85">
+                </div>
+                <button class="btn-add" onclick="addSubject()">CALCULATE</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Score</th>
+                        <th>Percent</th>
+                        <th>Grade</th>
+                        <th>GPA</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody"></tbody>
+            </table>
+
+            <div id="summaryPanel" class="summary">
+                <div><p>Average %</p><h3 id="finalPercent">0%</h3></div>
+                <div><p>Final GPA</p><h3 id="finalGPA">0.00</h3></div>
+                <div><p>Final Grade</p><h3 id="finalGrade">-</h3></div>
+                <div style="width:100%; margin-top:20px;">
+                    <button class="btn-main" style="padding:10px 25px; font-size:0.9rem;" onclick="resetAll()">Reset All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <script src="onlyjavascript.js"></script>
+</body>
+</html>
